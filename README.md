@@ -1,0 +1,3 @@
+# aftp-ebs
+Sample beanstalk
+
