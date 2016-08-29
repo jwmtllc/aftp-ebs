@@ -38,7 +38,7 @@
 
 					<webResources>
 						<resource>
-							<directory>src/main/java/webapp/WEB-INF</directory>
+							<directory>src/main/java/webapp</directory>
 							<includes>
 								<include>**/*.html</include>
 							</includes>
