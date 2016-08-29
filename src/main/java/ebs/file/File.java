@@ -3,6 +3,8 @@ package ebs.file;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
@@ -21,6 +23,9 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 @Path("")
 public class File {
+	private static final Logger LOGGER = Logger.getLogger("");
+	
+
 
 	private static final String BUCKET_NAME = "mtllc-share";
 
@@ -78,6 +83,7 @@ public class File {
 			return Response.status(200).entity(content).build();
 		} catch (Exception e) {
 			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, "AFTP:" + e.getMessage(), e);
 			
 			String output = "Unable to cat file: " + BUCKET_NAME + "/" + msg + "<br>";
 			output += e.getMessage() + "<br>";
