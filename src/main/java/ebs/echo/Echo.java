@@ -10,7 +10,7 @@ public class Echo {
 	@GET
     @Path("{param}")
     public Response getMsg(@PathParam("param") String msg) {
-        String output = "ECHO: " + msg;
+        String output = "AFTP: " + msg;
         return Response.status(200).entity(output).build();
    }
 	
